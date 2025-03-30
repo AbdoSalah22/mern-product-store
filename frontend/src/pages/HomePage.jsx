@@ -15,7 +15,7 @@ const HomePage = () => {
 
   return (
     <Container
-      maxW={"container.sm"}
+      maxW={"container.lg"}
       py={12}>
       <VStack spacing={8}>
         <Text
@@ -28,9 +28,8 @@ const HomePage = () => {
         <SimpleGrid
           columns={{
             base: 1,
-            sm: 2,
-            md: 3,
-            lg: 4,
+            md: 2,
+            lg: 3,
           }}
           spacing={8}
           w={"full"}>

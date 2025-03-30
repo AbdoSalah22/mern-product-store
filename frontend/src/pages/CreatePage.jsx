@@ -1,7 +1,5 @@
-import { Box, Button, Container, Heading, Input, VStack } from '@chakra-ui/react';
-import { toaster } from "../components/ui/toaster"
+import { Box, Button, Container, Heading, Input, useColorModeValue, useToast, VStack } from '@chakra-ui/react';
 import React from 'react'
-import { useColorModeValue } from '../components/ui/color-mode';
 import { useProductStore } from '../store/product';
 
 const CreatePage = () => {
@@ -11,21 +9,25 @@ const CreatePage = () => {
     image: "",
   });
 
+  const toast = useToast();
   const {createProduct} = useProductStore();
   const handleAddProduct = async () => {
     const { success, message } = await createProduct(newProduct);
     console.log(success, message);
-    // Toast does not work!! (check documentation)
     if(!success) {
-      toaster.create({
-        description: "error!!",
-        type: "error",
+      toast({
+        description: message,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
       })
     }
     else {
-      toaster.create({
-        description: "success!!",
-        type: "success",
+      toast({
+        description: message,
+        status: "success",
+        duration: 3000,
+        isClosable: true,
       })
     }
     setNewProduct({

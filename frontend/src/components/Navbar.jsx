@@ -1,13 +1,12 @@
-import { Button, Container, Flex, HStack, Text } from '@chakra-ui/react'
+import { Button, Container, Flex, HStack, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useColorMode, useColorModeValue } from './ui/color-mode'
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Container maxW={"1140px"} px={4}>
       <Flex
@@ -28,7 +27,7 @@ const Navbar = () => {
           fontWeight={"bold"}
           textTransform={"uppercase"}
           textAlign={"center"}
-          color={useColorModeValue("cyan.400", "blue.600")} // Use a solid color instead of gradient
+          color={useColorModeValue("blue.400", "cyan.600")} // Use a solid color instead of gradient
         >
           <Link to="/">Product Store 🛒</Link>
         </Text>
