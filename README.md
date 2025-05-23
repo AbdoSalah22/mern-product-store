@@ -117,7 +117,6 @@ mern-crash-course/
 
 ## Credits
 
-Built as a crash course project for learning the MERN stack and Docker.
-Credits: Codesistency on YouTube
+Credits to **Codesistency** on YouTube for creating a crash course project for learning the MERN stack.
 
 ---
